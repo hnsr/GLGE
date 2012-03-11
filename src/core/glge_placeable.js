@@ -709,9 +709,9 @@ GLGE.Placeable.prototype.move=function(amount,reference){
 			var xAxis=GLGE.toUnitVec3([matrix[0],matrix[1],matrix[2]]);
 			var yAxis=GLGE.toUnitVec3([matrix[4],matrix[5],matrix[6]]);
 			var zAxis=GLGE.toUnitVec3([matrix[8],matrix[9],matrix[10]]);
-			var x=xAxis[0]*amount[0]+xAxis[1]*amount[1]+xAxis[2]*amount[2];
-			var y=yAxis[0]*amount[0]+yAxis[1]*amount[1]+yAxis[2]*amount[2];
-			var z=zAxis[0]*amount[0]+zAxis[1]*amount[1]+zAxis[2]*amount[2];
+			var x=xAxis[0]*amount[0]+yAxis[0]*amount[1]+zAxis[0]*amount[2];
+			var y=xAxis[1]*amount[0]+yAxis[1]*amount[1]+zAxis[1]*amount[2];
+			var z=xAxis[2]*amount[0]+yAxis[2]*amount[1]+zAxis[2]*amount[2];
 			this.setLocX(+this.locX+x);
 			this.setLocY(+this.locY+y);
 			this.setLocZ(+this.locZ+z);
